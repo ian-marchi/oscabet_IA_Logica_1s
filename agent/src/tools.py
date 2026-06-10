@@ -219,6 +219,71 @@ def run_prediction_engine(home_team: str, away_team: str, league: str = None,
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# Tool 6 — get_value_bets (apostas de valor em jogos futuros, com odds reais)
+# ══════════════════════════════════════════════════════════════════════════════
+def get_value_bets(league: str = None, floor: float = 0.05, max_matches: int = 6) -> dict:
+    """
+    Busca jogos FUTUROS + odds reais (Sofascore), roda o modelo e devolve as
+    apostas com valor esperado (EV = prob × odd − 1) acima do PISO. Pode demorar
+    alguns segundos (faz requisições de odds por jogo).
+    """
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))  # agent/
+    import value_bets as vb
+    leagues = [league] if league else ["brasileirao_a"]   # default: 1 liga (latência)
+    rows, sem_odds = vb.collect(leagues, floor, max_matches)
+    return {
+        "piso_ev_pct":     round(floor * 100, 1),
+        "ligas":           leagues,
+        "jogos_sem_odds":  sem_odds,
+        "n_apostas":       len(rows),
+        "apostas":         rows[:25],
+        "observacao": ("EV = prob_modelo × odd − 1. stake_pct é sugestão de Kelly fracionado. "
+                       "Se jogos_sem_odds for alto, pode ser período sem rodada próxima "
+                       "(odds só aparecem perto do jogo)."),
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Tool 7 — get_world_cup_predictions (Copa do Mundo 2026, via forma dos amistosos)
+# ══════════════════════════════════════════════════════════════════════════════
+def get_world_cup_predictions(max_matches: int = 12) -> dict:
+    """
+    Previsões dos próximos jogos da Copa do Mundo 2026, usando a forma das
+    seleções obtida dos amistosos. EXTRAPOLAÇÃO: o modelo foi treinado em clubes.
+    """
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))  # agent/
+    import world_cup as wc
+    import value_bets as vb
+    cli = vb.Odds()
+    fixtures = wc.wc_fixtures(cli, max_matches)
+    out, sem_forma = [], []
+    for fx in fixtures:
+        pred = pred_module.predict(fx["home"], fx["away"], wc.FORM_LEAGUE)
+        if "error" in pred:
+            sem_forma.append(f"{fx['home']} x {fx['away']}")
+            continue
+        r = pred["resultado"]
+        out.append({"jogo": f"{fx['home']} x {fx['away']}", "ts": fx["ts"],
+                    "favorito": r["label"], "probs": r["probs"],
+                    "equilibrado": r["equilibrado"],
+                    "cartoes": pred["cartoes"]["label"],
+                    "escanteios": pred["escanteios"]["label"]})
+    return {
+        "n_previstos": len(out),
+        "jogos": out,
+        "sem_forma_amistosos": sem_forma[:15],
+        "aviso": ("O modelo foi treinado em futebol de CLUBES. Previsões de seleções "
+                  "são EXTRAPOLAÇÃO experimental — apresente com essa ressalva. Se "
+                  "sem_forma_amistosos não estiver vazio, esses times não têm amistosos "
+                  "suficientes no banco."),
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # Dispatcher — usado pelo orchestrator.py
 # ══════════════════════════════════════════════════════════════════════════════
 TOOL_MAP = {
@@ -227,6 +292,8 @@ TOOL_MAP = {
     "get_league_table":      get_league_table,
     "get_team_schedule":     get_team_schedule,
     "run_prediction_engine": run_prediction_engine,
+    "get_value_bets":        get_value_bets,
+    "get_world_cup_predictions": get_world_cup_predictions,
 }
 
 def execute_tool(name: str, inputs: dict):
@@ -334,6 +401,41 @@ TOOL_DEFINITIONS = [
                 "competition": {"type": "string", "description": "Rótulo da competição fictícia, ex.: 'Mundial de Clubes', 'Libertadores' (opcional, só exibição)"},
             },
             "required": ["home_team", "away_team"],
+        },
+    },
+    {
+        "name": "get_value_bets",
+        "description": (
+            "Busca os JOGOS FUTUROS de uma liga + as ODDS reais (Sofascore), roda o modelo e "
+            "devolve as APOSTAS DE VALOR — aquelas em que o valor esperado EV = prob_modelo × odd − 1 "
+            "passa de um PISO (default 5%). Use quando o usuário pedir 'melhores apostas da rodada', "
+            "'onde apostar', 'apostas de valor', 'value bet', 'dicas da rodada', 'tem aposta boa'. "
+            "Pode demorar alguns segundos. Se o usuário não disser a liga, use brasileirao_a."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "league": {"type": "string", "description": "Liga a varrer (default brasileirao_a). Ligas: brasileirao_a, brasileirao_b, copa_brasil, libertadores, premier_league, la_liga, serie_a, bundesliga, ligue_1, champions_league"},
+                "floor":  {"type": "number", "description": "Piso de EV em fração (0.05 = 5%). Default 0.05; suba para ser mais seletivo."},
+                "max_matches": {"type": "integer", "description": "Máximo de jogos a varrer na liga (default 6)"},
+            },
+            "required": [],
+        },
+    },
+    {
+        "name": "get_world_cup_predictions",
+        "description": (
+            "Previsões dos próximos jogos da COPA DO MUNDO 2026 (usando a forma das seleções "
+            "obtida dos amistosos). Use quando o usuário pedir 'previsão da copa', 'jogos da copa do "
+            "mundo', 'quem ganha na copa', 'palpites da copa'. ATENÇÃO: o modelo foi treinado em "
+            "CLUBES, então previsões de seleções são EXTRAPOLAÇÃO — sempre apresente com essa ressalva."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "max_matches": {"type": "integer", "description": "Máximo de jogos da Copa a prever (default 12)"},
+            },
+            "required": [],
         },
     },
 ]

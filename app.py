@@ -35,6 +35,7 @@ load_dotenv(_ROOT / ".env")
 
 # Disponibiliza o pacote do agente para import
 sys.path.insert(0, str(_ROOT / "agent" / "src"))
+sys.path.insert(0, str(_ROOT / "agent"))          # para value_bets.py
 
 WEB_DIR = _ROOT / "web"
 
@@ -108,6 +109,90 @@ def chat():
     except Exception as e:  # noqa: BLE001
         traceback.print_exc()
         return jsonify({"error": "Falha ao processar a mensagem.", "detail": str(e)}), 500
+
+
+# ── Dashboard: times, previsão direta e rodada (jogos futuros) ────────────────
+LEAGUE_LABELS = {
+    "brasileirao_a": "Brasileirão A", "brasileirao_b": "Brasileirão B",
+    "copa_brasil": "Copa do Brasil", "libertadores": "Libertadores",
+    "premier_league": "Premier League", "la_liga": "La Liga", "serie_a": "Serie A",
+    "bundesliga": "Bundesliga", "ligue_1": "Ligue 1", "champions_league": "Champions League",
+}
+
+
+@app.route("/api/leagues")
+def leagues():
+    return jsonify([{"key": k, "label": v} for k, v in LEAGUE_LABELS.items()])
+
+
+@app.route("/api/teams")
+def teams():
+    """Lista os times de uma liga (rápido, vem do banco de features)."""
+    league = request.args.get("league", "brasileirao_a")
+    try:
+        import data_loader
+        f = data_loader.features()
+        sub = f[f["league"] == league]
+        names = sorted(set(sub["home_team"]) | set(sub["away_team"]))
+        return jsonify({"league": league, "teams": names})
+    except Exception as e:  # noqa: BLE001
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/predict")
+def predict_endpoint():
+    """Previsão DIRETA (sem LLM) — usada pelo simulador do dashboard."""
+    home = (request.args.get("home") or "").strip()
+    away = (request.args.get("away") or "").strip()
+    if not home or not away:
+        return jsonify({"error": "Informe home e away."}), 400
+    try:
+        import predictor
+        pred = predictor.predict(
+            home, away,
+            league=request.args.get("league") or None,
+            home_league=request.args.get("home_league") or None,
+            away_league=request.args.get("away_league") or None,
+            competition=request.args.get("competition") or None,
+        )
+        return jsonify(pred)
+    except Exception as e:  # noqa: BLE001
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/upcoming")
+def upcoming():
+    """Jogos futuros de uma liga + previsão + apostas de valor (pode demorar)."""
+    league = request.args.get("league", "brasileirao_a")
+    floor = float(request.args.get("floor", 0.05))
+    max_m = int(request.args.get("max", 8))
+    try:
+        import value_bets as vb
+        import predictor
+        cli = vb.Odds()
+        fixtures = cli.upcoming(league, max_m)
+        out = []
+        sem_odds = 0
+        for fx in fixtures:
+            pred = predictor.predict(fx["home"], fx["away"], league)
+            if "error" in pred:
+                continue
+            raw = cli.get(f"{vb.BASE}/event/{fx['id']}/odds/1/all")
+            odds = vb.parse_odds(raw)
+            bets = vb.value_bets_for_match(fx["home"], fx["away"], league, odds, floor) if odds else []
+            bets = [b for b in bets if "erro" not in b]
+            if not odds:
+                sem_odds += 1
+            out.append({"id": fx["id"], "home": fx["home"], "away": fx["away"],
+                        "ts": fx["ts"], "prediction": pred, "value_bets": bets,
+                        "has_odds": bool(odds)})
+        return jsonify({"league": league, "floor_pct": round(floor * 100, 1),
+                        "jogos_sem_odds": sem_odds, "matches": out})
+    except Exception as e:  # noqa: BLE001
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":

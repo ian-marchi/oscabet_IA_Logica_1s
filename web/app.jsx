@@ -159,12 +159,146 @@ function Welcome({ onPick }) {
   );
 }
 
+/* ───────────────────────── Dashboard (Painel) ───────────────────────── */
+const fmtDate = (ts) => ts ? new Date(ts * 1000).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) : "";
+
+function Select({ value, onChange, options, placeholder }) {
+  return (
+    <select className="sel" value={value} onChange={(e) => onChange(e.target.value)}>
+      {placeholder && <option value="">{placeholder}</option>}
+      {options.map((o) => {
+        const v = o.value ?? o, l = o.label ?? o;
+        return <option key={v} value={v}>{l}</option>;
+      })}
+    </select>
+  );
+}
+
+function Spinner({ text }) {
+  return <div className="spin"><span className="spin__ball" />{text || "Carregando…"}</div>;
+}
+
+function Simulador({ leagues }) {
+  const [league, setLeague] = useState("brasileirao_a");
+  const [teams, setTeams] = useState([]);
+  const [home, setHome] = useState("");
+  const [away, setAway] = useState("");
+  const [pred, setPred] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!league) return;
+    fetch(`/api/teams?league=${league}`).then((r) => r.json())
+      .then((d) => { setTeams(d.teams || []); setHome(""); setAway(""); setPred(null); });
+  }, [league]);
+
+  const run = async () => {
+    if (!home || !away || loading) return;
+    setLoading(true); setPred(null);
+    try {
+      const r = await fetch(`/api/predict?home=${encodeURIComponent(home)}&away=${encodeURIComponent(away)}&league=${league}`);
+      setPred(await r.json());
+    } catch (e) { setPred({ error: "Falha na previsão." }); }
+    setLoading(false);
+  };
+
+  return (
+    <div className="panel">
+      <h3 className="panel__h"><Icon.Spark style={{ width: 15, height: 15, color: C.pitch }} /> Simulador de confronto</h3>
+      <p className="panel__sub">Escolha dois times e veja a previsão da rede neural na hora.</p>
+      <div className="panel__row">
+        <Select value={league} onChange={setLeague} options={leagues} />
+        <Select value={home} onChange={setHome} options={teams} placeholder="Mandante…" />
+        <span className="vs">×</span>
+        <Select value={away} onChange={setAway} options={teams} placeholder="Visitante…" />
+        <button className="btn" onClick={run} disabled={!home || !away || loading}>Prever</button>
+      </div>
+      {loading && <Spinner text="Rodando a rede neural…" />}
+      {pred && pred.error && <div className="err">⚠ {pred.error}</div>}
+      {pred && !pred.error && <PredictionCard pred={pred} />}
+    </div>
+  );
+}
+
+function MatchCard({ m }) {
+  const r = m.prediction.resultado;
+  return (
+    <div className="mcard">
+      <div className="mcard__top">
+        <span className="mcard__teams">{m.home} <span className="mcard__vs">×</span> {m.away}</span>
+        <span className="mcard__date">{fmtDate(m.ts)}</span>
+      </div>
+      <div className="mcard__pick">
+        Palpite: <b>{RES_NAME[r.label] || r.label}</b> · {Math.round(r.confidence * 100)}%
+        {r.equilibrado && <span className="market__badge">Equilibrado</span>}
+      </div>
+      {m.value_bets.length > 0 ? (
+        <div className="mcard__bets">
+          {m.value_bets.map((b, i) => (
+            <div className="vbet" key={i}>
+              <span className="vbet__mkt">{b.mercado}</span>
+              <span>{b.aposta} @ <b>{b.odd}</b></span>
+              <span className="vbet__ev">EV +{b.ev_pct}%</span>
+              <span className="vbet__stake">stake {b.stake_pct}%</span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mcard__noodds">{m.has_odds ? "Sem aposta de valor neste jogo." : "Odds ainda não disponíveis."}</div>
+      )}
+    </div>
+  );
+}
+
+function Rodada({ leagues }) {
+  const [league, setLeague] = useState("brasileirao_a");
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const buscar = async () => {
+    setLoading(true); setData(null);
+    try {
+      const r = await fetch(`/api/upcoming?league=${league}&max=8`);
+      setData(await r.json());
+    } catch (e) { setData({ error: "Falha ao buscar a rodada." }); }
+    setLoading(false);
+  };
+
+  return (
+    <div className="panel">
+      <h3 className="panel__h"><Icon.Chart style={{ width: 15, height: 15, color: C.pitch }} /> Próxima rodada · apostas de valor</h3>
+      <p className="panel__sub">Jogos futuros com previsão e apostas onde o EV passa de 5% (odds reais do Sofascore).</p>
+      <div className="panel__row">
+        <Select value={league} onChange={setLeague} options={leagues} />
+        <button className="btn" onClick={buscar} disabled={loading}>Buscar rodada</button>
+      </div>
+      {loading && <Spinner text="Buscando jogos e odds (pode levar alguns segundos)…" />}
+      {data && data.error && <div className="err">⚠ {data.error}</div>}
+      {data && data.matches && data.matches.length === 0 && (
+        <div className="empty">Nenhum jogo próximo encontrado. Pode ser período de pausa do campeonato.</div>
+      )}
+      {data && data.matches && data.matches.map((m) => <MatchCard key={m.id} m={m} />)}
+    </div>
+  );
+}
+
+function Painel({ leagues }) {
+  return (
+    <main className="painel">
+      <Simulador leagues={leagues} />
+      <Rodada leagues={leagues} />
+    </main>
+  );
+}
+
 /* ───────────────────────── App ──────────────────────────────────────── */
 function App() {
   const [messages, setMessages] = useState([]);   // {role, content, tools?, prediction?}
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [online, setOnline] = useState(null);
+  const [tab, setTab] = useState("chat");
+  const [leagues, setLeagues] = useState([]);
   const scroller = useRef(null);
   const taRef = useRef(null);
 
@@ -172,6 +306,9 @@ function App() {
     fetch("/api/health").then(r => r.json())
       .then(d => setOnline(!!d.agent_ready))
       .catch(() => setOnline(false));
+    fetch("/api/leagues").then(r => r.json())
+      .then(d => setLeagues((d || []).map(l => ({ value: l.key, label: l.label }))))
+      .catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -233,6 +370,14 @@ function App() {
           </div>
         </header>
 
+        <nav className="tabs">
+          <button className={`tabs__btn ${tab === "chat" ? "on" : ""}`} onClick={() => setTab("chat")}>Chat</button>
+          <button className={`tabs__btn ${tab === "painel" ? "on" : ""}`} onClick={() => setTab("painel")}>Painel</button>
+        </nav>
+
+        {tab === "painel" && <Painel leagues={leagues} />}
+
+        {tab === "chat" && <React.Fragment>
         <main className="chat" ref={scroller}>
           {messages.length === 0 && !loading
             ? <Welcome onPick={(t) => send(t)} />
@@ -257,6 +402,7 @@ function App() {
           </div>
           <div className="composer__hint">Enter envia · Shift+Enter quebra linha</div>
         </footer>
+        </React.Fragment>}
       </div>
     </React.Fragment>
   );

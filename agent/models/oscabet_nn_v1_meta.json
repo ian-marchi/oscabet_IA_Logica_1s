@@ -116,19 +116,19 @@
   ],
   "w_draw": 1.0,
   "n_train": 9319,
-  "n_val": 6856,
+  "n_val": 6892,
   "metrics": {
     "resultado": {
-      "acuracia": 0.5181,
-      "log_loss": 0.9925
+      "acuracia": 0.5222,
+      "log_loss": 0.9914
     },
     "cartoes": {
-      "acuracia": 0.6215,
-      "log_loss": 0.6279
+      "acuracia": 0.6238,
+      "log_loss": 0.6266
     },
     "escanteios": {
-      "acuracia": 0.5651,
-      "log_loss": 0.6528
+      "acuracia": 0.5666,
+      "log_loss": 0.6531
     }
   }
 }

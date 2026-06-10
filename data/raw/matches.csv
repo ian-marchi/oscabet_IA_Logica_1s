@@ -17835,3 +17835,542 @@ match_id,league,season,date,home_team,away_team,home_team_id,away_team_id,home_s
 8896751,champions_league,20/21,2020-08-26,NK Celje,Molde FK,2413,661,1,2,A,False
 8840336,champions_league,20/21,2020-08-26,NK Lokomotiva Zagreb,SK Rapid Wien,36246,2055,0,1,A,True
 8896746,champions_league,20/21,2020-08-26,Ludogorets,FC Midtjylland,43840,1289,0,1,A,True
+15235589,brasileirao_a,2026,2026-05-30,Athletico,Mirassol,1967,21982,1,0,H,True
+15235579,brasileirao_a,2026,2026-05-30,Flamengo,Coritiba,5981,1982,3,0,H,True
+15235585,brasileirao_a,2026,2026-05-30,Bahia,Botafogo,1955,1958,2,1,H,True
+15235583,brasileirao_a,2026,2026-05-30,Grêmio,Corinthians,5926,1957,1,3,A,True
+15235580,brasileirao_a,2026,2026-05-30,Santos,Vitória,1968,1962,3,1,H,True
+15235584,brasileirao_a,2026,2026-05-31,Red Bull Bragantino,Internacional,1999,1966,3,1,H,True
+15235590,brasileirao_a,2026,2026-05-31,Vasco da Gama,Atlético Mineiro,1974,1977,0,1,A,True
+15235581,brasileirao_a,2026,2026-05-31,Palmeiras,Chapecoense,1963,21845,1,0,H,True
+15237974,brasileirao_a,2026,2026-05-31,Remo,São Paulo,2012,1981,1,0,H,True
+15235586,brasileirao_a,2026,2026-05-31,Cruzeiro,Fluminense,1954,1961,1,1,D,True
+15526116,brasileirao_b,2026,2026-05-30,Juventude,América Mineiro,1980,1973,3,0,H,True
+15526113,brasileirao_b,2026,2026-05-30,Avaí,Criciúma,7315,1984,1,2,A,True
+15526112,brasileirao_b,2026,2026-05-30,Atlético Goianiense,Goiás,7314,1960,1,1,D,True
+15526109,brasileirao_b,2026,2026-05-30,Athletic Club,Fortaleza,342775,2020,1,0,H,True
+15526114,brasileirao_b,2026,2026-05-30,Sport Recife,Náutico,1959,2011,2,0,H,True
+15526110,brasileirao_b,2026,2026-05-31,Londrina,Vila Nova FC,2022,2021,0,1,A,True
+15526108,brasileirao_b,2026,2026-05-31,São Bernardo,Grêmio Novorizontino,47504,135514,1,1,D,True
+15526111,brasileirao_b,2026,2026-05-31,Ceará,Operário-PR,2001,39634,1,2,A,True
+15526115,brasileirao_b,2026,2026-05-31,Cuiabá,Clube De Regatas Brasil,49202,22032,2,0,H,True
+15526107,brasileirao_b,2026,2026-06-01,Ponte Preta,Botafogo-SP,1969,1979,0,0,D,True
+15526120,brasileirao_b,2026,2026-06-05,Operário-PR,Juventude,39634,1980,2,1,H,True
+15526123,brasileirao_b,2026,2026-06-06,Criciúma,Londrina,1984,2022,1,0,H,True
+15526125,brasileirao_b,2026,2026-06-07,Clube De Regatas Brasil,São Bernardo,22032,47504,2,3,A,True
+15526126,brasileirao_b,2026,2026-06-08,Vila Nova FC,Botafogo-SP,2021,1979,1,0,H,True
+15526119,brasileirao_b,2026,2026-06-08,América Mineiro,Atlético Goianiense,1973,7314,1,2,A,True
+15526117,brasileirao_b,2026,2026-06-09,Ponte Preta,Cuiabá,1969,49202,1,2,A,True
+15526124,brasileirao_b,2026,2026-06-09,Náutico,Fortaleza,2011,2020,0,1,A,True
+15832853,libertadores,2026,2026-05-27,Libertad,Universidad Central,5996,249952,0,1,A,True
+15832852,libertadores,2026,2026-05-27,Independiente del Valle,Rosario Central,39723,3217,1,0,H,True
+15832843,libertadores,2026,2026-05-28,Peñarol,Independiente Santa Fe,3227,6116,0,1,A,True
+15832844,libertadores,2026,2026-05-28,Corinthians,Club Atlético Platense,1957,36837,0,2,A,True
+15832819,libertadores,2026,2026-05-28,Bolívar,Independiente Rivadavia,7059,36842,1,3,A,True
+15832818,libertadores,2026,2026-05-28,Fluminense,Deportivo La Guaira,1961,36437,3,1,H,True
+15832849,libertadores,2026,2026-05-28,Cerro Porteño,Club Sporting Cristal,5991,2302,2,0,H,True
+15832848,libertadores,2026,2026-05-28,Palmeiras,Junior Barranquilla,1963,6105,4,1,H,True
+15832845,libertadores,2026,2026-05-29,Boca Juniors,Universidad Católica,3202,3151,0,1,A,True
+15832846,libertadores,2026,2026-05-29,Cruzeiro,Barcelona SC Guayaquil,1954,5250,4,0,H,True
+16198901,ligue_1,25/26,2026-05-29,Nice,Saint-Étienne,1661,1678,4,1,H,True
+16205032,amistosos,2026,2026-06-08,Netherlands,Uzbekistan,4705,4723,2,1,H,True
+16264238,amistosos,2026,2026-06-08,Niger,Mauritania,8031,4779,0,1,A,False
+16130149,amistosos,2026,2026-06-08,France,Northern Ireland,4481,4786,3,1,H,True
+16123045,amistosos,2026,2026-06-09,Spain,Peru,4698,4790,3,1,H,True
+16295021,amistosos,2026,2026-06-09,Vanuatu,Fiji,8046,8044,2,2,D,False
+16242938,amistosos,2026,2026-06-09,Equatorial Guinea,Comoros,8032,23494,0,1,A,False
+16233035,amistosos,2026,2026-06-09,Philippines,Myanmar,4791,23484,5,1,H,False
+16255955,amistosos,2026,2026-06-09,China,Thailand,4755,4730,0,0,D,True
+16233036,amistosos,2026,2026-06-09,Cambodia,Hong Kong,7929,4765,2,0,H,False
+16255956,amistosos,2026,2026-06-09,Indonesia,Mozambique,4829,4783,1,0,H,False
+16251450,amistosos,2026,2026-06-09,Kyrgyzstan,Palestine,7930,4788,0,0,D,False
+16255954,amistosos,2026,2026-06-09,Ethiopia,Malawi,8036,8043,1,1,D,False
+16174775,amistosos,2026,2026-06-09,Armenia,Moldova,4740,4782,1,1,D,False
+16268596,amistosos,2026,2026-06-09,Tajikistan,India,23488,4828,1,1,D,False
+16223232,amistosos,2026,2026-06-09,DR Congo,Chile,4823,4754,1,2,A,True
+16205035,amistosos,2026,2026-06-09,Belarus,Burkina Faso,4743,4749,2,2,D,False
+16260668,amistosos,2026,2026-06-09,Angola,Central African Republic,4692,23470,3,0,H,False
+16189860,amistosos,2026,2026-06-09,Russia,Trinidad and Tobago,4694,5162,3,0,H,True
+16174776,amistosos,2026,2026-06-09,Hungary,Kazakhstan,4709,4772,3,1,H,True
+16297513,amistosos,2026,2026-06-09,Togo,Benin,4836,4744,5,1,H,False
+16153731,amistosos,2026,2026-06-09,San Marino,Azerbaijan,4833,4742,1,2,A,False
+16288569,amistosos,2026,2026-06-09,Liberia,Sierra Leone,8034,4737,3,1,H,False
+16173603,amistosos,2026,2026-06-09,Senegal,Saudi Arabia,4739,4834,0,0,D,True
+16251282,amistosos,2026,2026-06-10,Iraq,Venezuela,4767,4722,0,2,A,False
+16174777,amistosos,2026,2026-06-10,Argentina,Iceland,4819,4708,3,0,H,True
+16302524,amistosos,2026,2026-06-10,Pakistan,Afghanistan,6081,4689,2,0,H,False
+16264574,amistosos,2026,2026-06-06,British Virgin Islands,Bonaire,21810,180236,2,0,H,False
+16205029,amistosos,2026,2026-06-06,Gibraltar,Cayman Islands,129264,21811,4,1,H,False
+16157427,amistosos,2026,2026-06-06,Romania,Wales,4477,4702,2,1,H,True
+15926543,amistosos,2026,2026-06-06,Portugal,Chile,4704,4754,2,1,H,True
+16174769,amistosos,2026,2026-06-06,Albania,Luxembourg,4690,4478,0,1,A,False
+15184400,amistosos,2026,2026-06-06,USA,Germany,4724,4711,1,2,A,True
+16130148,amistosos,2026,2026-06-06,Panama,Bosnia & Herzegovina,5164,4479,1,1,D,False
+16118856,amistosos,2026,2026-06-06,Switzerland,Australia,4699,4741,1,1,D,True
+16277698,amistosos,2026,2026-06-06,Cabo Verde,Bermuda,4753,4745,3,0,H,False
+16118857,amistosos,2026,2026-06-06,Qatar,El Salvador,4792,4825,0,0,D,True
+16017800,amistosos,2026,2026-06-06,Bolivia,Scotland,4746,4695,0,4,A,True
+15926544,amistosos,2026,2026-06-06,England,New Zealand,4713,4784,1,0,H,True
+16264426,amistosos,2026,2026-06-06,Jamaica,South Africa,4769,4736,1,1,D,False
+16130144,amistosos,2026,2026-06-06,Venezuela,Türkiye,4722,4700,1,2,A,True
+15691379,amistosos,2026,2026-06-06,Brazil,Egypt,4748,4758,2,1,H,True
+16130147,amistosos,2026,2026-06-07,Curaçao,Aruba,55827,21806,4,0,H,False
+16118858,amistosos,2026,2026-06-07,Argentina,Honduras,4819,4827,2,0,H,True
+16251287,amistosos,2026,2026-06-07,Afghanistan,Pakistan,4689,6081,0,2,A,False
+16186154,amistosos,2026,2026-06-07,Liechtenstein,Cyprus,4830,4482,0,2,A,True
+16277706,amistosos,2026,2026-06-07,Oman,Mozambique,4787,4783,4,1,H,False
+16260284,amistosos,2026,2026-06-07,Kenya,Lesotho,4773,8033,4,0,H,False
+16273056,amistosos,2026,2026-06-07,Maldives,Bangladesh U23,6911,49024,1,1,D,False
+16223229,amistosos,2026,2026-06-07,Kosovo,Andorra,154426,4818,3,0,H,False
+15536792,amistosos,2026,2026-06-07,Croatia,Slovenia,4715,4484,2,1,H,True
+16118859,amistosos,2026,2026-06-07,Morocco,Norway,4778,4475,1,1,D,True
+16174773,amistosos,2026,2026-06-07,Greece,Italy,4710,4707,0,1,A,True
+16223230,amistosos,2026,2026-06-07,Ecuador,Guatemala,4757,5163,3,0,H,True
+16118860,amistosos,2026,2026-06-07,Colombia,Jordan,4820,4771,2,0,H,True
+16292665,amistosos,2026,2026-06-08,Sri Lanka,Bhutan,23487,191564,4,1,H,False
+16263838,amistosos,2026,2026-06-05,Singapore,China,4738,4755,1,2,A,True
+16226715,amistosos,2026,2026-06-05,Hong Kong,Mongolia,4765,23496,2,0,H,False
+16195375,amistosos,2026,2026-06-05,Thailand,Kuwait,4730,5368,2,2,D,True
+16223225,amistosos,2026,2026-06-05,Indonesia,Oman,4829,4787,3,0,H,False
+16263941,amistosos,2026,2026-06-05,Tajikistan,India,23488,4828,3,1,H,False
+16195374,amistosos,2026,2026-06-05,Belarus,Syria,4743,4731,4,1,H,False
+16174764,amistosos,2026,2026-06-05,Georgia,Bahrain,4763,5161,2,0,H,False
+16118855,amistosos,2026,2026-06-05,Slovakia,Montenegro,4697,7139,2,2,D,False
+16174765,amistosos,2026,2026-06-05,Moldova,Bulgaria,4782,4716,2,2,D,False
+16189861,amistosos,2026,2026-06-05,Russia,Burkina Faso,4694,4749,3,0,H,True
+16047999,amistosos,2026,2026-06-05,San Marino,Bangladesh,4833,6080,1,2,A,False
+15926540,amistosos,2026,2026-06-05,Hungary,Finland,4709,4712,2,1,H,True
+16264237,amistosos,2026,2026-06-05,Central African Republic,Togo,23470,4836,1,1,D,False
+16277693,amistosos,2026,2026-06-05,Benin,Niger,4744,8031,1,1,D,False
+16174766,amistosos,2026,2026-06-05,Azerbaijan,Malta,4742,4483,0,2,A,False
+16273039,amistosos,2026,2026-06-05,Angola,Mauritania,4692,4779,1,1,D,False
+16130150,amistosos,2026,2026-06-05,Paraguay,Nicaragua,4789,21817,4,0,H,True
+16277694,amistosos,2026,2026-06-05,Saudi Arabia,Puerto Rico,4834,21818,3,0,H,False
+15926541,amistosos,2026,2026-06-05,Canada,Ireland,4752,4693,1,1,D,True
+16173604,amistosos,2026,2026-06-06,Haiti,Peru,7229,4790,1,2,A,True
+16282097,amistosos,2026,2026-06-06,Vanuatu,Fiji,8046,8044,2,1,H,False
+16268921,amistosos,2026,2026-06-06,Myanmar,Guam,23484,23493,6,1,H,False
+15536791,amistosos,2026,2026-06-06,Belgium,Tunisia,4717,4729,5,0,H,True
+16174768,amistosos,2026,2026-06-06,Armenia,Kazakhstan,4740,4772,1,1,D,False
+16264329,amistosos,2026,2026-06-06,Kyrgyzstan,Palestine,7930,4788,0,0,D,False
+16284867,amistosos,2026,2026-06-06,Ethiopia,Malawi,8036,8043,1,0,H,False
+16277697,amistosos,2026,2026-06-06,Sierra Leone,Liberia,4737,8034,1,0,H,False
+15691376,amistosos,2026,2026-06-01,Austria,Tunisia,4718,4729,1,0,H,True
+16112839,amistosos,2026,2026-06-01,Colombia,Costa Rica,4820,4756,3,1,H,True
+15530938,amistosos,2026,2026-06-02,Canada,Uzbekistan,4752,4723,2,0,H,True
+15536790,amistosos,2026,2026-06-02,Croatia,Belgium,4715,4717,0,2,A,True
+15898759,amistosos,2026,2026-06-02,Georgia,Romania,4763,4477,1,1,D,False
+16205026,amistosos,2026,2026-06-02,Morocco,Madagascar,4778,8035,4,0,H,True
+15926537,amistosos,2026,2026-06-02,Wales,Ghana,4702,4764,1,1,D,True
+16173609,amistosos,2026,2026-06-03,Haiti,New Zealand,7229,4784,4,0,H,True
+16233033,amistosos,2026,2026-06-03,Philippines,Guam,4791,23493,5,1,H,False
+16205027,amistosos,2026,2026-06-03,Gibraltar,British Virgin Islands,129264,21810,4,0,H,False
+16174762,amistosos,2026,2026-06-03,Albania,Israel,4690,4480,0,1,A,True
+16130145,amistosos,2026,2026-06-03,Denmark,DR Congo,4476,4823,0,0,D,True
+16048005,amistosos,2026,2026-06-03,Poland,Nigeria,4703,4785,2,2,D,True
+15671256,amistosos,2026,2026-06-03,Netherlands,Algeria,4705,4691,0,1,A,True
+16153424,amistosos,2026,2026-06-03,Luxembourg,Italy,4478,4707,0,1,A,True
+16153421,amistosos,2026,2026-06-04,Panama,Dominican Republic,5164,21813,4,2,H,False
+16173602,amistosos,2026,2026-06-04,South Korea,El Salvador,4735,4825,1,0,H,True
+16251066,amistosos,2026,2026-06-04,Maldives,Pakistan,6911,6081,0,3,A,False
+16233034,amistosos,2026,2026-06-04,Cambodia,Bhutan,7929,191564,4,0,H,False
+16260285,amistosos,2026,2026-06-04,Lesotho,Kenya,8033,4773,1,1,D,False
+16274137,amistosos,2026,2026-06-04,Afghanistan,Bangladesh U23,4689,49024,0,0,D,False
+16186150,amistosos,2026,2026-06-04,Northern Ireland,Guinea,4786,4826,1,0,H,True
+16153422,amistosos,2026,2026-06-04,Slovenia,Cyprus,4484,4482,1,1,D,False
+16277689,amistosos,2026,2026-06-04,Iran,Mali,4766,4831,2,0,H,False
+16186152,amistosos,2026,2026-06-04,Andorra,Liechtenstein,4818,4830,2,0,H,True
+16153425,amistosos,2026,2026-06-04,Sweden,Greece,4688,4710,2,2,D,True
+16186149,amistosos,2026,2026-06-04,Spain,Iraq,4698,4767,1,1,D,True
+16112840,amistosos,2026,2026-06-04,France,Côte d'Ivoire,4481,4768,1,2,A,True
+16130130,amistosos,2026,2026-05-27,Jamaica,India,4769,4828,2,0,H,False
+16130134,amistosos,2026,2026-05-28,Egypt,Russia,4758,4694,1,0,H,True
+15891670,amistosos,2026,2026-05-28,Ireland,Qatar,4693,4792,1,0,H,True
+16205024,amistosos,2026,2026-05-29,Iran,Gambia,4766,4762,3,1,H,False
+16213241,amistosos,2026,2026-05-29,Andorra,Iraq,4818,4767,0,1,A,False
+16154022,amistosos,2026,2026-05-29,South Africa,Nicaragua,4736,21817,0,0,D,True
+16130125,amistosos,2026,2026-05-29,Bosnia & Herzegovina,North Macedonia,4479,4777,0,0,D,True
+15396500,amistosos,2026,2026-05-30,Scotland,Curaçao,4695,55827,4,1,H,True
+16143337,amistosos,2026,2026-05-31,Ecuador,Saudi Arabia,4757,4834,2,1,H,True
+16173601,amistosos,2026,2026-05-31,South Korea,Trinidad and Tobago,4735,5162,5,0,H,True
+15891671,amistosos,2026,2026-05-31,Mexico,Australia,4781,4741,1,0,H,True
+16012856,amistosos,2026,2026-05-31,Japan,Iceland,4770,4708,1,0,H,True
+16223220,amistosos,2026,2026-05-31,Singapore,Mongolia,4738,23496,4,0,H,False
+15891673,amistosos,2026,2026-05-31,Switzerland,Jordan,4699,4771,4,1,H,True
+16186148,amistosos,2026,2026-05-31,Czechia,Kosovo,4714,154426,2,1,H,False
+16130132,amistosos,2026,2026-05-31,Cabo Verde,Serbia,4753,6355,3,0,H,False
+16153730,amistosos,2026,2026-05-31,Poland,Ukraine,4703,4701,0,2,A,False
+15362814,amistosos,2026,2026-05-31,Germany,Finland,4711,4712,4,0,H,True
+15362151,amistosos,2026,2026-05-31,USA,Senegal,4724,4739,3,2,H,True
+15926535,amistosos,2026,2026-05-31,Brazil,Panama,4748,5164,6,2,H,True
+16260665,amistosos,2026,2026-06-01,Pakistan,Bangladesh U23,6081,49024,0,0,D,False
+16251064,amistosos,2026,2026-06-01,Maldives,Afghanistan,6911,4689,0,1,A,False
+16153420,amistosos,2026,2026-06-01,Bulgaria,Montenegro,4716,7139,0,1,A,False
+16153423,amistosos,2026,2026-06-01,Slovakia,Malta,4697,4483,2,1,H,False
+15891674,amistosos,2026,2026-06-01,Norway,Sweden,4475,4688,3,1,H,True
+16154025,amistosos,2026,2026-06-01,Türkiye,North Macedonia,4700,4777,4,0,H,True
+15366480,amistosos,2026,2026-03-31,Norway,Switzerland,4475,4699,0,0,D,True
+15842566,amistosos,2026,2026-03-31,Serbia,Saudi Arabia,6355,4834,2,1,H,True
+15888803,amistosos,2026,2026-03-31,Russia,Mali,4694,4831,0,0,D,True
+15691370,amistosos,2026,2026-03-31,Hungary,Greece,4709,4710,0,0,D,True
+15776619,amistosos,2026,2026-03-31,South Africa,Panama,4736,5164,1,2,A,True
+15691369,amistosos,2026,2026-03-31,Haiti,Iceland,7229,4708,1,1,D,True
+15874436,amistosos,2026,2026-03-31,Jordan,Nigeria,4771,4785,2,2,D,False
+15911534,amistosos,2026,2026-03-31,Guinea,Benin,4826,4744,0,1,A,False
+15650607,amistosos,2026,2026-03-31,Peru,Honduras,4790,4827,2,2,D,True
+15533871,amistosos,2026,2026-03-31,Morocco,Paraguay,4778,4789,2,1,H,True
+15643903,amistosos,2026,2026-03-31,Scotland,Côte d'Ivoire,4695,4768,0,1,A,True
+15598101,amistosos,2026,2026-03-31,Algeria,Uruguay,4691,4725,0,0,D,True
+15891665,amistosos,2026,2026-03-31,Ireland,North Macedonia,4693,4777,0,0,D,True
+15891476,amistosos,2026,2026-03-31,Wales,Northern Ireland,4702,4786,1,1,D,True
+15891358,amistosos,2026,2026-03-31,Slovakia,Romania,4697,4477,2,0,H,False
+15891477,amistosos,2026,2026-03-31,Ukraine,Albania,4701,4690,1,0,H,False
+15691372,amistosos,2026,2026-03-31,Austria,South Korea,4718,4735,1,0,H,True
+15366476,amistosos,2026,2026-03-31,Netherlands,Ecuador,4705,4757,1,1,D,True
+15366477,amistosos,2026,2026-03-31,England,Japan,4713,4770,0,1,A,True
+15910597,amistosos,2026,2026-03-31,Burkina Faso,Guinea-Bissau,4749,23478,1,1,D,False
+15598097,amistosos,2026,2026-03-31,Senegal,Gambia,4739,4762,3,1,H,False
+15372901,amistosos,2026,2026-03-31,Spain,Egypt,4698,4758,0,0,D,True
+15184398,amistosos,2026,2026-03-31,USA,Portugal,4724,4704,0,2,A,True
+15884050,amistosos,2026,2026-03-31,Argentina,Zambia,4819,4720,5,0,H,True
+15332282,amistosos,2026,2026-04-01,Croatia,Brazil,4715,4748,1,3,A,True
+15691374,amistosos,2026,2026-04-01,Canada,Tunisia,4752,4729,0,0,D,True
+15372905,amistosos,2026,2026-04-01,Mexico,Belgium,4781,4717,1,1,D,True
+16117282,amistosos,2026,2026-05-16,Ireland,Grenada,4693,21814,5,0,H,True
+15891669,amistosos,2026,2026-05-23,Mexico,Ghana,4781,4764,2,0,H,True
+15396516,amistosos,2026,2026-03-28,Scotland,Japan,4695,4770,0,1,A,True
+15883802,amistosos,2026,2026-03-28,Burkina Faso,Guinea-Bissau,4749,23478,5,0,H,False
+15184402,amistosos,2026,2026-03-28,USA,Belgium,4724,4717,2,5,A,True
+15680562,amistosos,2026,2026-03-29,Haiti,Tunisia,7229,4729,0,1,A,True
+15437863,amistosos,2026,2026-03-29,Mexico,Portugal,4781,4704,0,0,D,True
+15691368,amistosos,2026,2026-03-29,Lithuania,Georgia,4776,4763,0,2,A,False
+15438050,amistosos,2026,2026-03-29,Armenia,Belarus,4740,4743,1,2,A,False
+15888683,amistosos,2026,2026-03-29,Martinique,El Salvador,45485,4825,0,1,A,False
+15655701,amistosos,2026,2026-03-29,Colombia,France,4820,4481,1,3,A,True
+15888684,amistosos,2026,2026-03-29,Barbados,Saint Vincent and the Grenadines,21808,21821,2,3,A,False
+15888685,amistosos,2026,2026-03-29,British Virgin Islands,Anguilla,21810,21804,4,0,H,False
+15888686,amistosos,2026,2026-03-29,Dominican Republic,Cuba,21813,4824,1,1,D,False
+15888687,amistosos,2026,2026-03-30,Cayman Islands,Bahamas,21811,21807,1,0,H,False
+15912506,amistosos,2026,2026-03-30,Bonaire,Saint Martin,180236,33812,0,3,A,False
+15727766,amistosos,2026,2026-03-30,Cyprus,Moldova,4482,4782,3,2,H,False
+15362813,amistosos,2026,2026-03-30,Germany,Ghana,4711,4764,2,1,H,True
+15888688,amistosos,2026,2026-03-30,Guyana,Belize,22113,21809,3,1,H,False
+15888689,amistosos,2026,2026-03-30,Dominica,Sint Maarten,21812,298263,0,0,D,False
+15856327,amistosos,2026,2026-03-31,Equatorial Guinea,Madagascar,8032,8035,1,1,D,False
+15915003,amistosos,2026,2026-03-31,Malawi,Botswana,8043,4747,0,1,A,False
+15915001,amistosos,2026,2026-03-31,Iran,Costa Rica,4766,4756,5,0,H,False
+15916698,amistosos,2026,2026-03-31,Saudi Arabia U23,Sudan,49094,4734,3,0,H,False
+15910219,amistosos,2026,2026-03-31,Liberia,Libya,8034,4775,2,2,D,False
+15910228,amistosos,2026,2026-03-31,Niger,Togo,8031,4836,0,1,A,False
+15912757,amistosos,2026,2026-03-31,Zimbabwe,Zambia U23,4719,208572,1,0,H,False
+15727770,amistosos,2026,2026-03-31,San Marino,Andorra,4833,4818,0,0,D,False
+15727769,amistosos,2026,2026-03-31,Montenegro,Slovenia,7139,4484,2,3,A,False
+15883775,amistosos,2026,2026-03-27,Iran,Nigeria,4766,4785,1,2,A,False
+15871842,amistosos,2026,2026-03-27,Benin,Liberia,4744,8034,1,0,H,False
+15871220,amistosos,2026,2026-03-27,Guinea,Togo,4826,4836,2,2,D,False
+15776614,amistosos,2026,2026-03-27,Russia,Nicaragua,4694,21817,3,1,H,True
+15646795,amistosos,2026,2026-03-27,Montenegro,Andorra,7139,4818,2,0,H,False
+15776615,amistosos,2026,2026-03-27,South Africa,Panama,4736,5164,1,1,D,True
+15437151,amistosos,2026,2026-03-27,Austria,Ghana,4718,4764,5,1,H,True
+15866943,amistosos,2026,2026-03-27,Jordan,Costa Rica,4771,4756,2,2,D,False
+15859096,amistosos,2026,2026-03-27,Saudi Arabia,Egypt,4834,4758,0,4,A,True
+15871223,amistosos,2026,2026-03-27,Libya,Niger,4775,8031,0,0,D,False
+15646794,amistosos,2026,2026-03-27,Greece,Paraguay,4710,4789,0,1,A,True
+15598110,amistosos,2026,2026-03-27,Algeria,Guatemala,4691,5163,7,0,H,True
+15366478,amistosos,2026,2026-03-27,Netherlands,Norway,4705,4475,2,1,H,True
+15362812,amistosos,2026,2026-03-27,Switzerland,Germany,4699,4711,3,4,A,True
+15366472,amistosos,2026,2026-03-27,England,Uruguay,4713,4725,1,1,D,True
+15794173,amistosos,2026,2026-03-27,Spain,Serbia,4698,6355,3,0,H,True
+15533869,amistosos,2026,2026-03-27,Morocco,Ecuador,4778,4757,1,1,D,True
+15888667,amistosos,2026,2026-03-27,Guyana,Dominica,22113,21812,2,0,H,False
+15888669,amistosos,2026,2026-03-27,Belize,Sint Maarten,21809,298263,2,3,A,False
+15847002,amistosos,2026,2026-03-27,Argentina,Mauritania,4819,4779,2,1,H,True
+15883794,amistosos,2026,2026-03-28,Zambia U23,Malawi,208572,8043,0,0,D,False
+15856261,amistosos,2026,2026-03-28,Kyrgyzstan,Madagascar,7930,8035,2,5,A,False
+15869965,amistosos,2026,2026-03-28,San Marino,Faroe Islands,4833,4760,1,2,A,False
+15776616,amistosos,2026,2026-03-28,South Korea,Côte d'Ivoire,4735,4768,0,4,A,True
+15883801,amistosos,2026,2026-03-28,Botswana,Zimbabwe,4747,4719,0,3,A,False
+15598098,amistosos,2026,2026-03-28,Senegal,Peru,4739,4790,2,0,H,True
+15437153,amistosos,2026,2026-03-28,Canada,Iceland,4752,4708,2,2,D,True
+15680561,amistosos,2026,2026-03-28,Hungary,Slovenia,4709,4484,1,0,H,True
+15235083,amistosos,2026,2025-12-17,Angola,Mozambique,4692,4783,4,1,H,False
+15362807,amistosos,2026,2026-01-18,Canada,Guatemala,4752,5163,1,0,H,True
+15383818,amistosos,2026,2026-01-18,Grenada,Jamaica,21814,4769,0,1,A,False
+15366114,amistosos,2026,2026-01-18,Bolivia,Panama,4746,5164,1,1,D,False
+15362809,amistosos,2026,2026-01-23,Panama,Mexico,5164,4781,0,1,A,True
+15362810,amistosos,2026,2026-01-25,Bolivia,Mexico,4746,4781,0,1,A,True
+15433285,amistosos,2026,2026-01-26,Uzbekistan,China,4723,4755,2,2,D,False
+15362811,amistosos,2026,2026-02-26,Mexico,Iceland,4781,4708,4,0,H,True
+15732835,amistosos,2026,2026-03-15,Bolivia,Trinidad and Tobago,4746,5162,3,0,H,False
+15869956,amistosos,2026,2026-03-25,Kyrgyzstan,Equatorial Guinea,7930,8032,0,1,A,False
+15854470,amistosos,2026,2026-03-25,DR Congo,Bermuda,4823,4745,2,0,H,False
+15883615,amistosos,2026,2026-03-26,FK Arsenal Tivat,Montenegro U19,37956,22540,0,2,A,False
+15712666,amistosos,2026,2026-03-26,Vietnam,Bangladesh,7050,6080,3,0,H,False
+15452155,amistosos,2026,2026-03-26,Moldova,Lithuania,4782,4776,0,2,A,False
+15437152,amistosos,2026,2026-03-26,Cyprus,Belarus,4482,4743,0,1,A,True
+15458672,amistosos,2026,2026-03-26,Georgia,Israel,4763,4480,2,2,D,True
+15912505,amistosos,2026,2026-03-26,Saint Martin,Barbados,33812,21808,3,1,H,False
+15341366,amistosos,2026,2026-03-26,Brazil,France,4748,4481,1,2,A,True
+15871324,amistosos,2026,2026-03-26,Martinique,Cuba,45485,4824,2,2,D,False
+15871475,amistosos,2026,2026-03-26,Bahamas,Anguilla,21807,21804,1,3,A,False
+15332281,amistosos,2026,2026-03-26,Colombia,Croatia,4820,4715,1,2,A,True
+15888662,amistosos,2026,2026-03-27,Cayman Islands,British Virgin Islands,21811,21810,1,1,D,False
+15840650,amistosos,2026,2026-03-27,Dominican Republic,El Salvador,21813,4825,2,2,D,False
+15888663,amistosos,2026,2026-03-27,Bonaire,Saint Vincent and the Grenadines,180236,21821,3,1,H,False
+15033103,amistosos,2025,2025-11-18,Kenya,Senegal,4773,4739,0,8,A,True
+15114539,amistosos,2025,2025-11-18,Niger,Guinea,8031,4826,1,1,D,False
+15115263,amistosos,2025,2025-11-18,Kuwait,Gambia,5368,4762,2,2,D,False
+15115262,amistosos,2025,2025-11-18,Angola,Zambia,4692,4720,3,2,H,False
+15033101,amistosos,2025,2025-11-18,Burkina Faso,Benin,4749,4744,3,0,H,False
+14994220,amistosos,2025,2025-11-18,Saudi Arabia,Algeria,4834,4691,0,2,A,True
+15102676,amistosos,2025,2025-11-18,Cyprus,Estonia,4482,4759,2,4,A,False
+14935663,amistosos,2025,2025-11-18,Faroe Islands,Kazakhstan,4760,4772,1,0,H,False
+15037767,amistosos,2025,2025-11-18,Chile,Peru,4754,4790,2,1,H,True
+15019794,amistosos,2025,2025-11-18,Catalunya,Palestine,39400,4788,2,1,H,False
+15037766,amistosos,2025,2025-11-18,Jordan,Mali,4771,4831,0,0,D,False
+14994231,amistosos,2025,2025-11-18,Morocco,Uganda,4778,4726,4,0,H,True
+14925483,amistosos,2025,2025-11-18,Brazil,Tunisia,4748,4729,1,1,D,True
+15025317,amistosos,2025,2025-11-18,Saint Kitts and Nevis,Belize,21819,21809,2,6,A,False
+15021587,amistosos,2025,2025-11-18,Antigua and Barbuda,Guyana,21805,22113,1,4,A,False
+15025318,amistosos,2025,2025-11-18,Dominican Republic,Martinique,21813,45485,0,0,D,False
+14994229,amistosos,2025,2025-11-19,USA,Uruguay,4724,4725,5,1,H,True
+15113243,amistosos,2025,2025-11-19,Ecuador,New Zealand,4757,4784,2,0,H,True
+15113205,amistosos,2025,2025-11-19,Venezuela,Canada,4722,4752,0,2,A,True
+14994224,amistosos,2025,2025-11-19,Mexico,Paraguay,4781,4789,1,2,A,True
+15027618,amistosos,2025,2025-11-19,Colombia,Australia,4820,4741,3,0,H,True
+15125543,amistosos,2025,2025-11-20,Papua New Guinea,Fiji,23495,8044,2,0,H,False
+15125697,amistosos,2025,2025-11-20,Vanuatu,Solomon Islands,8046,23471,2,1,H,False
+15225127,amistosos,2025,2025-12-16,DR Congo,Zambia,4823,4720,2,0,H,False
+15216896,amistosos,2025,2025-12-16,Egypt,Nigeria,4758,4785,2,1,H,False
+15247997,amistosos,2025,2025-12-18,Tunisia,Botswana,4729,4747,2,1,H,False
+15248874,amistosos,2025,2025-12-21,Peru,Bolivia,4790,4746,2,0,H,True
+15042858,amistosos,2025,2025-11-15,Guinea,Liberia,4826,8034,2,0,H,False
+15105551,amistosos,2025,2025-11-15,Kuwait,Tanzania,5368,4835,4,3,H,False
+14925456,amistosos,2025,2025-11-15,Brazil,Senegal,4748,4739,2,0,H,True
+15043243,amistosos,2025,2025-11-15,Basque Country,Palestine,51499,4788,3,0,H,False
+15024377,amistosos,2025,2025-11-15,Dominica,Sint Maarten,21812,298263,2,3,A,False
+15021359,amistosos,2025,2025-11-15,Barbados,Aruba,21808,21806,0,3,A,False
+15024376,amistosos,2025,2025-11-15,Martinique,Cuba,45485,4824,0,2,A,False
+15024379,amistosos,2025,2025-11-15,Bahamas,British Virgin Islands,21807,21810,0,6,A,False
+14994235,amistosos,2025,2025-11-15,USA,Paraguay,4724,4789,2,1,H,True
+15024378,amistosos,2025,2025-11-15,Saint Martin,Belize,33812,21809,0,1,A,False
+15021360,amistosos,2025,2025-11-15,Guyana,Bonaire,22113,180236,2,1,H,False
+15024380,amistosos,2025,2025-11-15,Saint Vincent and the Grenadines,Saint Lucia,21821,21820,3,1,H,False
+15024381,amistosos,2025,2025-11-16,Cayman Islands,Anguilla,21811,21804,4,0,H,False
+15035393,amistosos,2025,2025-11-16,Colombia,New Zealand,4820,4784,2,1,H,True
+14994228,amistosos,2025,2025-11-16,Mexico,Uruguay,4781,4725,0,0,D,True
+15110458,amistosos,2025,2025-11-17,Vanuatu,Fiji,8046,8044,2,0,H,False
+15110424,amistosos,2025,2025-11-17,Egypt B,Algeria B,1150867,1134811,0,0,D,False
+15110422,amistosos,2025,2025-11-17,Madagascar,Equatorial Guinea,8035,8032,2,0,H,False
+15110488,amistosos,2025,2025-11-17,Chad,Mozambique,8039,4783,2,2,D,False
+15110425,amistosos,2025,2025-11-17,Bahrain,Somalia,5161,23472,1,2,A,False
+15033100,amistosos,2025,2025-11-17,Comoros,Namibia,23494,4832,4,0,H,False
+15110428,amistosos,2025,2025-11-17,Egypt,Cabo Verde,4758,4753,1,1,D,False
+15110368,amistosos,2025,2025-11-17,Qatar,Zimbabwe,4792,4719,1,2,A,True
+15114924,amistosos,2025,2025-11-17,Morocco B,Djibouti,1151872,8042,7,0,H,False
+14859105,amistosos,2025,2025-11-17,Finland,Andorra,4712,4818,4,0,H,True
+14994225,amistosos,2025,2025-11-18,Japan,Bolivia,4770,4746,3,0,H,True
+14993711,amistosos,2025,2025-11-18,South Korea,Ghana,4735,4764,1,0,H,True
+15115259,amistosos,2025,2025-11-18,Oman U23,Sudan,49081,4734,0,0,D,False
+15033102,amistosos,2025,2025-11-18,Lesotho,Malawi,8033,8043,0,1,A,False
+15042184,amistosos,2025,2025-11-18,Oman,Côte d'Ivoire,4787,4768,0,2,A,False
+15016650,amistosos,2025,2025-11-13,Thailand,Singapore,4730,4738,3,2,H,True
+15032832,amistosos,2025,2025-11-13,Bangladesh,Nepal,6080,23489,2,2,D,False
+14994232,amistosos,2025,2025-11-13,Algeria,Zimbabwe,4691,4719,3,1,H,True
+14884162,amistosos,2025,2025-11-13,North Macedonia,Latvia,4777,4706,0,0,D,False
+14859104,amistosos,2025,2025-11-13,Lithuania,Israel,4776,4480,0,0,D,True
+14758120,amistosos,2025,2025-11-13,Czechia,San Marino,4714,4833,1,0,H,False
+14994227,amistosos,2025,2025-11-14,Canada,Ecuador,4752,4757,0,0,D,True
+14994221,amistosos,2025,2025-11-14,Japan,Ghana,4770,4764,2,0,H,True
+14990872,amistosos,2025,2025-11-14,South Korea,Bolivia,4735,4746,2,0,H,True
+15042756,amistosos,2025,2025-11-14,Egypt B,Algeria B,1150867,1134811,3,2,H,False
+15087840,amistosos,2025,2025-11-14,Uganda,Chad,4726,8039,2,1,H,False
+15042860,amistosos,2025,2025-11-14,Uganda,Chad,4726,8039,2,1,H,False
+15083472,amistosos,2025,2025-11-14,Oman,Sudan,4787,4734,2,0,H,False
+15033099,amistosos,2025,2025-11-14,Kenya,Equatorial Guinea,4773,8032,0,1,A,False
+15033097,amistosos,2025,2025-11-14,Comoros,Namibia,23494,4832,1,0,H,False
+15039639,amistosos,2025,2025-11-14,Uzbekistan,Egypt,4723,4758,2,0,H,True
+15016652,amistosos,2025,2025-11-14,Angola,Argentina,4692,4819,0,2,A,True
+14994222,amistosos,2025,2025-11-14,Saudi Arabia,Côte d'Ivoire,4834,4768,1,0,H,False
+15042286,amistosos,2025,2025-11-14,Tunisia,Jordan,4729,4771,3,2,H,True
+15032911,amistosos,2025,2025-11-14,Burkina Faso,Niger,4749,8031,3,2,H,False
+14994223,amistosos,2025,2025-11-14,Morocco,Mozambique,4778,4783,1,0,H,True
+15037469,amistosos,2025,2025-11-15,Grenada,US Virgin Islands,21814,21803,4,1,H,False
+14994226,amistosos,2025,2025-11-15,Venezuela,Australia,4722,4741,1,0,H,True
+15042862,amistosos,2025,2025-11-15,Papua New Guinea,Fiji,23495,8044,0,1,A,False
+15048662,amistosos,2025,2025-11-15,Burundi,Burundi B,4750,1150874,3,4,A,False
+15042287,amistosos,2025,2025-11-15,South Africa,Zambia,4736,4720,3,1,H,True
+15042859,amistosos,2025,2025-11-15,Libya,Mauritania,4775,4779,1,0,H,False
+15033098,amistosos,2025,2025-11-15,Lesotho,Malawi,8033,8043,0,0,D,False
+14956326,amistosos,2025,2025-11-15,Russia,Chile,4694,4754,0,2,A,True
+14784774,amistosos,2025,2025-10-12,Mexico,Colombia,4781,4820,0,4,A,True
+14189469,amistosos,2025,2025-10-12,Malta,Bosnia & Herzegovina,4483,4479,1,4,A,False
+14864078,amistosos,2025,2025-10-13,Uzbekistan,Uruguay,4723,4725,1,2,A,True
+14722517,amistosos,2025,2025-10-13,Montenegro,Liechtenstein,7139,4830,2,1,H,False
+14875840,amistosos,2025,2025-10-13,Algeria B,Palestine,1134811,4788,0,1,A,False
+14561709,amistosos,2025,2025-10-14,Japan,Brazil,4770,4748,3,2,H,True
+14849701,amistosos,2025,2025-10-14,South Korea,Paraguay,4735,4789,2,0,H,True
+14879296,amistosos,2025,2025-10-14,Kuwait,Morocco U23,5368,49072,0,1,A,False
+14879295,amistosos,2025,2025-10-14,Iran,Tanzania,4766,4835,2,0,H,False
+14605774,amistosos,2025,2025-10-14,Norway,New Zealand,4475,4784,1,1,D,True
+14722518,amistosos,2025,2025-10-14,Albania,Jordan,4690,4771,4,2,H,False
+14391166,amistosos,2025,2025-10-14,Russia,Bolivia,4694,4746,3,0,H,True
+14784775,amistosos,2025,2025-10-15,Canada,Colombia,4752,4820,0,0,D,True
+14787861,amistosos,2025,2025-10-15,Puerto Rico,Argentina,21818,4819,0,6,A,True
+14553328,amistosos,2025,2025-10-15,USA,Australia,4724,4741,2,1,H,True
+14787862,amistosos,2025,2025-10-15,Mexico,Ecuador,4781,4757,1,1,D,True
+15031794,amistosos,2025,2025-11-11,Papua New Guinea U23,Vanuatu,1115009,8046,1,1,D,False
+15016613,amistosos,2025,2025-11-12,Tunisia,Mauritania,4729,4779,1,1,D,True
+14443998,amistosos,2025,2025-11-12,Russia,Peru,4694,4790,1,1,D,True
+15024367,amistosos,2025,2025-11-12,Dominica,Saint Martin,21812,33812,1,2,A,False
+15021354,amistosos,2025,2025-11-12,Barbados,Bonaire,21808,180236,3,2,H,False
+15024366,amistosos,2025,2025-11-12,Cuba,Saint Lucia,4824,21820,3,0,H,False
+15021586,amistosos,2025,2025-11-12,Bahamas,Anguilla,21807,21804,1,2,A,False
+15024368,amistosos,2025,2025-11-12,Saint Kitts and Nevis,Sint Maarten,21819,298263,0,0,D,False
+15021356,amistosos,2025,2025-11-12,Antigua and Barbuda,Aruba,21805,21806,0,0,D,False
+15021585,amistosos,2025,2025-11-13,Cayman Islands,British Virgin Islands,21811,21810,1,2,A,False
+15016649,amistosos,2025,2025-11-13,Dominican Republic,Saint Vincent and the Grenadines,21813,21821,2,0,H,False
+15042227,amistosos,2025,2025-11-13,Papua New Guinea,Solomon Islands,23495,23471,1,0,H,False
+15042180,amistosos,2025,2025-11-13,Hong Kong,Cambodia,4765,7929,1,1,D,False
+15042711,amistosos,2025,2025-11-13,India,Bhutan,4828,191564,6,1,H,False
+14587770,amistosos,2025,2025-09-08,Czechia,Saudi Arabia,4714,4834,1,1,D,True
+14553330,amistosos,2025,2025-09-09,New Zealand,Australia,4784,4741,1,3,A,True
+14642638,amistosos,2025,2025-09-09,Sri Lanka,Maldives,23487,6911,1,1,D,True
+14595236,amistosos,2025,2025-09-09,Estonia,Andorra,4759,4818,0,0,D,False
+14644673,amistosos,2025,2025-09-09,Jordan,Dominican Republic,4771,21813,3,0,H,True
+14595237,amistosos,2025,2025-09-09,Wales,Canada,4702,4752,0,1,A,True
+14595238,amistosos,2025,2025-09-09,Malta,San Marino,4483,4833,3,1,H,False
+14642650,amistosos,2025,2025-09-09,Egypt,Tunisia,4758,4729,3,0,H,True
+14553332,amistosos,2025,2025-09-09,USA,Japan,4724,4770,2,0,H,True
+14553327,amistosos,2025,2025-09-10,Mexico,South Korea,4781,4735,2,2,D,True
+14833617,amistosos,2025,2025-10-05,Saint Vincent and the Grenadines,Cuba,21821,4824,7,0,H,False
+14722515,amistosos,2025,2025-10-08,Gibraltar,New Caledonia,129264,8045,0,2,A,False
+14843036,amistosos,2025,2025-10-08,Grenada,British Virgin Islands,21814,21810,4,1,H,False
+14843040,amistosos,2025,2025-10-09,Saint Vincent and the Grenadines,Cuba,21821,4824,1,0,H,False
+14820015,amistosos,2025,2025-10-09,Uzbekistan,Kuwait,4723,5368,2,0,H,True
+14605769,amistosos,2025,2025-10-09,Romania,Moldova,4477,4782,2,1,H,True
+14553331,amistosos,2025,2025-10-09,Poland,New Zealand,4703,4784,1,0,H,True
+14605770,amistosos,2025,2025-10-09,England,Wales,4713,4702,3,0,H,True
+14832014,amistosos,2025,2025-10-09,Morocco,Bahrain,4778,5161,1,0,H,True
+14859097,amistosos,2025,2025-10-09,Algeria B,Palestine,1134811,4788,3,0,H,False
+14801771,amistosos,2025,2025-10-10,Japan,Paraguay,4770,4789,2,2,D,True
+14794176,amistosos,2025,2025-10-10,South Korea,Brazil,4735,4748,0,5,A,True
+14854068,amistosos,2025,2025-10-10,Uruguay,Dominican Republic,4725,21813,1,0,H,True
+14849689,amistosos,2025,2025-10-10,Bolivia,Jordan,4746,4771,1,0,H,False
+14605771,amistosos,2025,2025-10-10,Russia,Iran,4694,4766,2,1,H,True
+14849690,amistosos,2025,2025-10-10,Chile,Peru,4754,4790,2,1,H,True
+14605773,amistosos,2025,2025-10-10,Canada,Australia,4752,4741,0,1,A,True
+14787863,amistosos,2025,2025-10-11,Argentina,Venezuela,4819,4722,1,0,H,True
+14553326,amistosos,2025,2025-10-11,USA,Ecuador,4724,4757,1,1,D,True
+13878561,amistosos,2025,2025-06-10,Luxembourg,Ireland,4478,4693,0,0,D,True
+13878562,amistosos,2025,2025-06-10,Israel,Slovakia,4480,4697,1,0,H,False
+13878570,amistosos,2025,2025-06-10,Greece,Bulgaria,4710,4716,4,0,H,True
+13878564,amistosos,2025,2025-06-10,England,Senegal,4713,4739,1,3,A,True
+13881603,amistosos,2025,2025-06-10,New Zealand,Ukraine,4784,4701,1,2,A,False
+13974681,amistosos,2025,2025-06-11,USA,Switzerland,4724,4699,0,4,A,True
+13888415,amistosos,2025,2025-06-11,Mexico,Türkiye,4781,4700,1,0,H,True
+14101613,amistosos,2025,2025-07-04,Senegal,Guinea,4739,4826,0,0,D,False
+14313226,amistosos,2025,2025-07-31,Zanzibar,Nigeria U23,274048,49078,2,2,D,False
+14313216,amistosos,2025,2025-07-31,Oman U23,Al Seeb SC,49081,71044,1,0,H,False
+14530390,amistosos,2025,2025-08-24,Qatar,Lebanon,4792,4774,0,1,A,True
+14605760,amistosos,2025,2025-09-03,Qatar,Bahrain,4792,5161,2,2,D,True
+14605762,amistosos,2025,2025-09-04,Malaysia,Singapore,6912,4738,2,1,H,False
+14569518,amistosos,2025,2025-09-04,Saudi Arabia,North Macedonia,4834,4777,2,1,H,True
+14582727,amistosos,2025,2025-09-04,Gibraltar,Albania,129264,4690,0,1,A,False
+13888416,amistosos,2025,2025-09-04,Norway,Finland,4475,4712,1,0,H,True
+14587741,amistosos,2025,2025-09-04,United Arab Emirates,Syria,4727,4731,3,1,H,False
+14360660,amistosos,2025,2025-09-04,Russia,Jordan,4694,4771,0,0,D,True
+14553333,amistosos,2025,2025-09-05,Australia,New Zealand,4741,4784,1,0,H,True
+14561658,amistosos,2025,2025-09-05,Indonesia,Chinese Taipei,4829,5937,6,0,H,False
+14569526,amistosos,2025,2025-09-05,Romania,Canada,4477,4752,0,3,A,True
+14630054,amistosos,2025,2025-09-06,Egypt,Tunisia,4758,4729,1,0,H,False
+14553325,amistosos,2025,2025-09-06,USA,South Korea,4724,4735,0,2,A,True
+14553329,amistosos,2025,2025-09-07,Mexico,Japan,4781,4770,0,0,D,True
+14371950,amistosos,2025,2025-09-07,Qatar,Russia,4792,4694,1,4,A,True
+14605768,amistosos,2025,2025-09-08,Malaysia,Palestine,6912,4788,1,0,H,False
+14587768,amistosos,2025,2025-09-08,Indonesia,Lebanon,4829,4774,0,0,D,False
+14640482,amistosos,2025,2025-09-08,Syria,Kuwait,4731,5368,2,2,D,False
+14639738,amistosos,2025,2025-09-08,United Arab Emirates,Bahrain,4727,5161,1,0,H,False
+13671824,amistosos,2025,2025-06-06,Poland,Moldova,4703,4782,2,0,H,False
+13979219,amistosos,2025,2025-06-06,Guinea-Bissau,Burundi,23478,4750,0,1,A,True
+13975713,amistosos,2025,2025-06-06,Niger,Gabon,8031,4761,4,3,H,False
+13975705,amistosos,2025,2025-06-06,Cameroon,Uganda,4751,4726,3,0,H,False
+13894329,amistosos,2025,2025-06-06,Morocco,Tunisia,4778,4729,2,0,H,True
+13888376,amistosos,2025,2025-06-07,Latvia,Azerbaijan,4706,4742,0,0,D,False
+13981292,amistosos,2025,2025-06-07,Kenya,Chad,4773,8039,0,0,D,False
+13888379,amistosos,2025,2025-06-07,Denmark,Northern Ireland,4476,4786,2,1,H,True
+13888380,amistosos,2025,2025-06-07,Greece,Slovakia,4710,4697,4,1,H,True
+13889925,amistosos,2025,2025-06-07,Canada,Ukraine,4752,4701,4,2,H,True
+13889926,amistosos,2025,2025-06-07,USA,Türkiye,4724,4700,1,2,A,True
+13888378,amistosos,2025,2025-06-07,Mexico,Switzerland,4781,4699,2,4,A,True
+13952139,amistosos,2025,2025-06-07,New Zealand,Côte d'Ivoire,4784,4768,1,0,H,False
+13979004,amistosos,2025,2025-06-08,DR Congo,Madagascar,4823,8035,3,1,H,False
+13945286,amistosos,2025,2025-06-08,Georgia,Cabo Verde,4763,4753,1,1,D,False
+13878565,amistosos,2025,2025-06-09,Liechtenstein,Scotland,4830,4695,0,4,A,True
+13979017,amistosos,2025,2025-06-09,Kosovo,Comoros,154426,23494,4,2,H,False
+13878569,amistosos,2025,2025-06-09,Montenegro,Armenia,7139,4740,2,2,D,False
+13988174,amistosos,2025,2025-06-09,Algeria,Rwanda,4691,8037,2,0,H,True
+13974678,amistosos,2025,2025-06-09,Morocco,Benin,4778,4744,1,0,H,True
+13988152,amistosos,2025,2025-06-10,Niger,Zimbabwe,8031,4719,1,1,D,False
+13988139,amistosos,2025,2025-06-10,Burundi,Mauritania,4750,4779,0,0,D,False
+13878559,amistosos,2025,2025-06-10,Slovenia,Bosnia & Herzegovina,4484,4479,2,1,H,False
+13878566,amistosos,2025,2025-06-10,Azerbaijan,Hungary,4742,4709,1,2,A,True
+13988147,amistosos,2025,2025-06-10,Kenya,Chad,4773,8039,2,1,H,False
+13720250,amistosos,2025,2025-06-10,Belarus,Russia,4743,4694,1,4,A,True
+13878567,amistosos,2025,2025-06-10,Denmark,Lithuania,4476,4776,5,0,H,True
+13878568,amistosos,2025,2025-06-10,Sweden,Algeria,4688,4691,4,3,H,True
+13988156,amistosos,2025,2025-06-10,South Africa,Mozambique,4736,4783,2,0,H,True
+13878560,amistosos,2025,2025-06-10,Northern Ireland,Iceland,4786,4708,1,0,H,True
+13936044,amistosos,2025,2025-05-29,Malaysia,Cabo Verde,6912,4753,0,3,A,False
+13949541,amistosos,2025,2025-05-30,Saint Vincent and the Grenadines,British Virgin Islands,21821,21810,1,1,D,False
+13950166,amistosos,2025,2025-05-30,Belize,Neza FC,21809,1114641,0,0,D,False
+13939934,amistosos,2025,2025-05-30,Saudi Arabia,Jordan,4834,4771,2,0,H,False
+13957332,amistosos,2025,2025-05-31,Grenada,Anguilla,21814,21804,2,0,H,True
+13957333,amistosos,2025,2025-06-01,El Salvador,Guatemala,4825,5163,1,1,D,True
+13961689,amistosos,2025,2025-06-02,Tunisia,Burkina Faso,4729,4749,2,0,H,True
+13951739,amistosos,2025,2025-06-03,Malaysia,Cabo Verde,6912,4753,0,3,A,False
+13948178,amistosos,2025,2025-06-04,Thailand,India,4730,4828,2,0,H,True
+13970736,amistosos,2025,2025-06-04,Bangladesh,Bhutan,6080,191564,2,0,H,True
+13967730,amistosos,2025,2025-06-05,Sri Lanka,Brunei Darussalam,23487,23491,1,0,H,False
+13974660,amistosos,2025,2025-06-05,Singapore,Maldives,4738,6911,3,1,H,True
+13974661,amistosos,2025,2025-06-05,Cambodia,Tajikistan,7929,23488,1,2,A,False
+13951515,amistosos,2025,2025-06-05,Hong Kong,Nepal,4765,23489,0,0,D,True
+13945279,amistosos,2025,2025-06-05,Georgia,Faroe Islands,4763,4760,1,0,H,False
+13931255,amistosos,2025,2025-06-05,Algeria,Rwanda,4691,8037,2,0,H,True
+13857472,amistosos,2025,2025-06-05,Belarus,Kazakhstan,4743,4772,4,1,H,True
+13973175,amistosos,2025,2025-06-05,DR Congo,Mali,4823,4831,1,0,H,False
+13975710,amistosos,2025,2025-06-06,Equatorial Guinea,Gambia,8032,4762,1,2,A,False
+13975658,amistosos,2025,2025-06-06,Central African Republic,Mauritania,23470,4779,2,1,H,False
+13945280,amistosos,2025,2025-06-06,Bulgaria,Cyprus,4716,4482,2,2,D,False
+13975674,amistosos,2025,2025-06-06,Zimbabwe,Burkina Faso,4719,4749,0,2,A,False
+13945283,amistosos,2025,2025-06-06,Kosovo,Armenia,154426,4740,5,2,H,False
+13945282,amistosos,2025,2025-06-06,Luxembourg,Slovenia,4478,4484,0,1,A,False
+13720249,amistosos,2025,2025-06-06,Russia,Nigeria,4694,4785,1,1,D,True
+13975700,amistosos,2025,2025-06-06,South Africa,Tanzania,4736,4835,0,0,D,True
+13945284,amistosos,2025,2025-06-06,Hungary,Sweden,4709,4688,0,2,A,True
+13945285,amistosos,2025,2025-06-06,Scotland,Iceland,4695,4708,1,3,A,True
+13952138,amistosos,2025,2025-06-06,Ireland,Senegal,4693,4739,1,1,D,True
+13632918,amistosos,2025,2025-03-19,India,Maldives,4828,6911,3,0,H,False
+13635939,amistosos,2025,2025-03-19,Kazakhstan,Curaçao,4772,55827,2,0,H,False
+13593081,amistosos,2025,2025-03-19,Russia,Grenada,4694,21814,5,0,H,True
+13640791,amistosos,2025,2025-03-20,Tajikistan,Belarus,23488,4743,0,5,A,True
+13639419,amistosos,2025,2025-03-20,Laos,Sri Lanka,23486,23487,1,2,A,True
+13640812,amistosos,2025,2025-03-20,Lebanon,East Timor,4774,23497,4,0,H,True
+13649221,amistosos,2025,2025-03-21,Singapore,Nepal,4738,23489,0,1,A,True
+13649222,amistosos,2025,2025-03-21,Thailand,Afghanistan,4730,4689,2,0,H,True
+13563695,amistosos,2025,2025-03-21,Northern Ireland,Switzerland,4786,4699,1,1,D,True
+13649228,amistosos,2025,2025-03-22,Puerto Rico,Dominican Republic,21818,21813,2,2,D,False
+13563693,amistosos,2025,2025-03-22,Luxembourg,Sweden,4478,4688,1,0,H,True
+13571402,amistosos,2025,2025-03-22,Azerbaijan,Haiti,4742,7229,0,3,A,False
+13649231,amistosos,2025,2025-03-25,Cambodia,Aruba,7929,21806,1,2,A,True
+13567697,amistosos,2025,2025-03-25,Russia,Zambia,4694,4720,5,0,H,True
+13576472,amistosos,2025,2025-03-25,Azerbaijan,Belarus,4742,4743,0,2,A,True
+13563701,amistosos,2025,2025-03-25,Sweden,Northern Ireland,4688,4786,5,1,H,True
+13563699,amistosos,2025,2025-03-25,Switzerland,Luxembourg,4699,4478,3,1,H,True
+13672659,amistosos,2025,2025-03-25,Niger,Bonaire,8031,180236,6,0,H,True
+13665487,amistosos,2025,2025-03-26,Dominican Republic,Puerto Rico,21813,21818,2,0,H,True
+13790328,amistosos,2025,2025-04-20,Anguilla,British Virgin Islands,21804,21810,1,0,H,False
+13868556,amistosos,2025,2025-05-08,Dominica,Barbados,21812,21808,0,0,D,False
+13878181,amistosos,2025,2025-05-11,Dominica,Barbados,21812,21808,0,0,D,False
+13919383,amistosos,2025,2025-05-20,Oman,Niger,4787,8031,4,1,H,False
+13917266,amistosos,2025,2025-05-20,Saint Kitts and Nevis,Saint Vincent and the Grenadines,21819,21821,1,3,A,True

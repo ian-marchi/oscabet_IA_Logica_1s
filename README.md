@@ -161,9 +161,16 @@ python app.py
 # abre http://localhost:5000
 ```
 
-A interface (`web/`) é um chat React (via CDN, sem build) servido pelo Flask.
+A interface (`web/`) é um React (via CDN, sem build) servido pelo Flask, com duas abas:
+- **Chat** — converse com o agente (linguagem natural, tools, previsões).
+- **Painel** — *Simulador* (escolha dois times → previsão na hora) e *Próxima rodada*
+  (jogos futuros com previsão + apostas de valor quando há odds).
+
+Endpoints extras do dashboard: `/api/leagues`, `/api/teams`, `/api/predict`, `/api/upcoming`.
 O backend só **consome** o modelo (`oscabet_nn_v1.pt`) via `orchestrator`/`predictor` —
 re-treinar a rede apenas regenera o `.pt` e o app passa a usá-lo automaticamente.
+
+Testes automatizados: `python agent/src/test_suite.py` (13 testes do núcleo).
 
 > **Windows:** rode sempre com o ambiente `oscabet` ativado. Sem ele, o `import torch`
 > falha com `OSError: [WinError 127] ... shm.dll` (faltam as DLLs do `Library\bin`).
@@ -206,7 +213,70 @@ H2H, posição na tabela e médias da liga.
 | `get_h2h` | Histórico de confrontos diretos entre dois times |
 | `get_league_table` | Tabela classificatória completa de uma liga |
 | `get_team_schedule` | Últimos jogos ou próximos jogos de um time |
-| `run_prediction_engine` | Previsão da rede neural para uma partida futura |
+| `run_prediction_engine` | Previsão da rede neural (suporta partidas fictícias entre ligas) |
+| `get_value_bets` | Apostas de **valor** em jogos futuros: modelo × odds reais (EV ≥ piso) |
+
+---
+
+## Atualização automática (semanal)
+
+O banco se atualiza sozinho a partir do Sofascore. Pipeline em `update_weekly.py`:
+**coleta incremental** (só jogos novos, por liga) → **preprocessamento**
+(`agent/preprocess.py`) → **retreino do ensemble** (`agent/train_ensemble.py`).
+
+```bash
+conda activate oscabet
+python update_weekly.py                 # pipeline completo
+python update_weekly.py --no-retrain    # só atualiza dados (sem retreinar)
+python update_weekly.py --seasons 1     # varre só a temporada atual (mais rápido)
+```
+
+### Agendar toda semana
+
+**Opção A — multiplataforma (APScheduler):** um processo que fica rodando.
+```bash
+python scheduler.py                     # default: segunda 04:00
+python scheduler.py --day sun --hour 6  # personaliza
+python scheduler.py --now               # teste: roda uma vez agora
+```
+
+**Opção B — agendador do SO (sobrevive a reboot, sem processo rodando):**
+
+- **Windows (Task Scheduler):**
+  ```powershell
+  schtasks /create /tn "OscaBet Update" /tr "%CD%\run_update.bat" /sc weekly /d MON /st 04:00
+  ```
+- **macOS / Linux (cron):** `crontab -e` e adicione:
+  ```cron
+  0 4 * * 1 /caminho/para/oscabet_IA_Logica_1s/run_update.sh >> /caminho/logs/cron.log 2>&1
+  ```
+  (no macOS, dê permissão: `chmod +x run_update.sh`)
+
+Logs em `logs/update_weekly.log`. O scraper é educado (rate limiting + cooldown
+anti-ban), então a coleta leva alguns minutos.
+
+---
+
+## Apostas de valor (modelo × odds reais)
+
+`agent/value_bets.py` busca jogos futuros + odds reais (Sofascore), roda o modelo e
+recomenda apostas onde o valor esperado **EV = prob_modelo × odd − 1** passa de um
+**piso** (default 5%). Cobre Resultado (1X2) e Escanteios O/U 9.5 (linha que casa com
+as odds); Cartões só quando a casa oferece a linha 4.5. Sugere stake por Kelly fracionado.
+
+```bash
+conda activate oscabet
+python agent/value_bets.py                          # brasileirao_a..., piso 5%
+python agent/value_bets.py --league premier_league --floor 0.08
+python agent/value_bets.py --event 15235586         # avalia um match_id (teste)
+```
+
+No chat do agente, basta perguntar *"quais as apostas de valor da rodada?"* — ele
+chama a tool `get_value_bets`. Odds só aparecem perto do jogo; fora de rodada o
+resultado vem vazio.
+
+> ⚠️ Mede valor contra as odds disponíveis; não é garantia de lucro. Casas reais
+> precificam força/forma (= nossas features), então a margem real é menor.
 
 ---
 
@@ -214,8 +284,8 @@ H2H, posição na tabela e médias da liga.
 
 - [x] `app.py` — API Flask com endpoint `/api/chat`
 - [x] Frontend React — ChatWindow + PredictionCard (em `web/`)
-- [ ] Scraper Sofascore — substituição dos dados sintéticos
-- [ ] Auto-atualização do banco de dados (APScheduler)
+- [x] Scraper Sofascore — dados reais (`Banco de dados/scraper/`)
+- [x] Auto-atualização semanal (`update_weekly.py` + `scheduler.py`)
 
 ---
 

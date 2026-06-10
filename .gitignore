@@ -1,1 +1,22 @@
+# Ambiente
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# SO / editores
+.DS_Store
+Thumbs.db
+
+# Artefatos temporários e backups
+*.bak
+_*.py
+logs/
+data/raw/scraper_run.log
+
+# Saídas que podem ser regeradas (mantém só o necessário versionado)
+# (descomente se não quiser versionar dados pesados)
+# data/processed/*.csv

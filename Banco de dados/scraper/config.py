@@ -10,8 +10,16 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-# Raiz do projeto = pasta acima de scraper/
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+# Raiz REAL do projeto: sobe a árvore até achar a pasta que contém 'agent' e 'data'
+# (o scraper fica em <raiz>/Banco de dados/scraper, então não basta parent.parent).
+def _find_project_root(start: Path) -> Path:
+    for p in [start, *start.parents]:
+        if (p / "agent").is_dir() and (p / "data").is_dir():
+            return p
+    # fallback: dois níveis acima (layout antigo, scraper na raiz)
+    return start.parent.parent
+
+PROJECT_ROOT = _find_project_root(Path(__file__).resolve().parent)
 load_dotenv(PROJECT_ROOT / ".env")
 
 # ------------------------------------------------------------------
@@ -37,13 +45,16 @@ LEAGUES = {
     "bundesliga": 35,
     "ligue_1": 34,
     "champions_league": 7,
+    # ── Seleções (para previsões da Copa do Mundo 2026) ──
+    "amistosos": 851,      # Int. Friendly Games (forma das seleções)
+    "copa_mundo": 16,      # FIFA World Cup 2026
 }
 
 # Quantas temporadas recentes coletar por liga.
 # A API devolve as temporadas da mais nova para a mais antiga; pegamos
 # as N primeiras. Isso funciona tanto para ligas europeias (rotulo
 # "24/25") quanto brasileiras (rotulo "2024"), sem depender do formato.
-NUM_SEASONS = 6
+NUM_SEASONS = int(os.getenv("SCRAPER_NUM_SEASONS", "6"))
 
 # ------------------------------------------------------------------
 # Rate limiting — atraso aleatorio entre requisicoes (segundos)
