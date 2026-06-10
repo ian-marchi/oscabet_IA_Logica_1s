@@ -1,5 +1,5 @@
 {
-  "input_dim": 93,
+  "input_dim": 103,
   "feat_cols": [
     "home_win_rate",
     "home_draw_rate",
@@ -20,6 +20,11 @@
     "home_big_chances_avg",
     "home_big_chances_missed_avg",
     "home_big_chances_conv_rate",
+    "home_xg_avg",
+    "home_xg_conceded_avg",
+    "home_xg_diff_avg",
+    "home_xg_overperformance",
+    "home_xg_underperformance",
     "home_pressing_intensity",
     "home_tackles_avg",
     "home_interceptions_avg",
@@ -62,6 +67,11 @@
     "away_big_chances_avg",
     "away_big_chances_missed_avg",
     "away_big_chances_conv_rate",
+    "away_xg_avg",
+    "away_xg_conceded_avg",
+    "away_xg_diff_avg",
+    "away_xg_overperformance",
+    "away_xg_underperformance",
     "away_pressing_intensity",
     "away_tackles_avg",
     "away_interceptions_avg",
@@ -96,20 +106,29 @@
     "league_corners_avg"
   ],
   "train_cutoff": "2024-03-01",
+  "n_models": 5,
+  "seeds": [
+    99,
+    7,
+    123,
+    2024,
+    42
+  ],
+  "w_draw": 1.0,
   "n_train": 9319,
   "n_val": 6856,
   "metrics": {
     "resultado": {
-      "acurácia": 0.4552,
-      "log_loss": 1.0321
+      "acuracia": 0.5181,
+      "log_loss": 0.9925
     },
-    "cartões": {
-      "acurácia": 0.5846,
-      "log_loss": 0.6494
+    "cartoes": {
+      "acuracia": 0.6215,
+      "log_loss": 0.6279
     },
     "escanteios": {
-      "acurácia": 0.5531,
-      "log_loss": 0.6556
+      "acuracia": 0.5651,
+      "log_loss": 0.6528
     }
   }
 }

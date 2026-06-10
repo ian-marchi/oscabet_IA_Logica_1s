@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OscaBet — especialista de futebol com IA e previsões por rede neural." />
+  <title>OscaBet · IA de Futebol</title>
+
+  <!-- Fonts: Russo One (display) + Chakra Petch (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Russo+One&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="root">
+    <!-- Fallback enquanto o React carrega -->
+    <div class="boot">
+      <div class="boot__ball"></div>
+      <p>Carregando OscaBet…</p>
+    </div>
+  </div>
+
+  <!-- React 18 + Babel (sem build step) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="app.jsx" data-presets="react"></script>
+</body>
+</html>

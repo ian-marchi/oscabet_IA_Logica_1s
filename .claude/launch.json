@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "oscabet-web-static",
+      "runtimeExecutable": "C:\\Users\\user\\miniconda3\\python.exe",
+      "runtimeArgs": ["-m", "http.server", "5500", "--directory", "web"],
+      "port": 5500
+    },
+    {
+      "name": "oscabet-live",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-Command",
+        "$env:PATH='C:\\Users\\user\\miniconda3\\envs\\oscabet;C:\\Users\\user\\miniconda3\\envs\\oscabet\\Library\\bin;C:\\Users\\user\\miniconda3\\envs\\oscabet\\Scripts;'+$env:PATH; $env:KMP_DUPLICATE_LIB_OK='TRUE'; $env:PYTHONUTF8='1'; & 'C:\\Users\\user\\miniconda3\\envs\\oscabet\\python.exe' app.py"
+      ],
+      "port": 5000
+    }
+  ]
+}

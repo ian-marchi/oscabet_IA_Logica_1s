@@ -5,10 +5,13 @@ Cada função retorna um dict serializável em JSON.
 TOOL_DEFINITIONS: schemas no formato da Claude API.
 execute_tool(): dispatcher usado pelo orchestrator.
 """
+# IMPORTANTE (Windows): predictor importa torch ANTES de pandas/numpy. Manter o
+# predictor no topo evita o conflito MKL/OpenMP que derruba o processo com
+# "OSError: [WinError 127] ... shm.dll".
+import predictor as pred_module
 import pandas as pd
 import numpy as np
 import data_loader
-import predictor as pred_module
 
 # ── Helpers internos ──────────────────────────────────────────────────────────
 def _result_for_team(row, team_name: str) -> str:
@@ -201,12 +204,18 @@ def get_team_schedule(team_name: str, upcoming: bool = False) -> dict:
 # ══════════════════════════════════════════════════════════════════════════════
 # Tool 5 — run_prediction_engine
 # ══════════════════════════════════════════════════════════════════════════════
-def run_prediction_engine(home_team: str, away_team: str, league: str) -> dict:
+def run_prediction_engine(home_team: str, away_team: str, league: str = None,
+                          home_league: str = None, away_league: str = None,
+                          competition: str = None) -> dict:
     """
-    Aciona a rede neural para prever resultado, cartões e escanteios
-    de uma partida futura.
+    Aciona a rede neural para prever resultado, cartões e escanteios.
+    Suporta partidas FICTÍCIAS entre competições (ex.: Flamengo x PSG num
+    Mundial): se os times forem de ligas diferentes, busca cada um na sua
+    competição. `competition` é só um rótulo de exibição (ex.: 'Mundial').
     """
-    return pred_module.predict(home_team, away_team, league)
+    return pred_module.predict(home_team, away_team, league,
+                               home_league=home_league, away_league=away_league,
+                               competition=competition)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -246,7 +255,7 @@ TOOL_DEFINITIONS = [
             "properties": {
                 "team_name": {"type": "string",  "description": "Nome exato do time"},
                 "last_n":    {"type": "integer", "description": "Últimos N jogos (padrão: 10)"},
-                "league":    {"type": "string",  "description": "Filtro de liga: 'brasileirao_a', 'premier_league' ou 'la_liga' (opcional)"},
+                "league":    {"type": "string",  "description": "Filtro de liga (opcional). Ligas: brasileirao_a, brasileirao_b, copa_brasil, libertadores, premier_league, la_liga, serie_a, bundesliga, ligue_1, champions_league"},
             },
             "required": ["team_name"],
         },
@@ -278,7 +287,7 @@ TOOL_DEFINITIONS = [
         "input_schema": {
             "type": "object",
             "properties": {
-                "league": {"type": "string", "description": "Liga: 'brasileirao_a', 'premier_league' ou 'la_liga'"},
+                "league": {"type": "string", "description": "Liga: brasileirao_a, brasileirao_b, copa_brasil, libertadores, premier_league, la_liga, serie_a, bundesliga, ligue_1 ou champions_league"},
                 "season": {"type": "string", "description": "Temporada ex: '24/25'. Use 'current' para a mais recente (padrão)."},
             },
             "required": ["league"],
@@ -304,19 +313,27 @@ TOOL_DEFINITIONS = [
         "name": "run_prediction_engine",
         "description": (
             "Aciona a rede neural treinada para prever o resultado, total de cartões amarelos "
-            "e total de escanteios de uma partida FUTURA. "
-            "Use SEMPRE que o usuário mencionar dois times em contexto de jogo futuro — "
-            "mesmo implícito: 'quem vence', 'vai ter gol', 'apostaria em quê', 'quem favorito'. "
-            "NÃO use para jogos já realizados."
+            "e total de escanteios de uma partida. "
+            "Use SEMPRE que o usuário pedir uma previsão, palpite, SIMULAÇÃO, cenário "
+            "hipotético, 'e se', ou um confronto (mesmo FICTÍCIO) entre dois times — "
+            "mesmo implícito: 'quem vence', 'vai ter gol', 'apostaria em quê', 'simula', 'imagina'. "
+            "SEMPRE chame esta tool ANTES de escrever qualquer análise e deixe ELA decidir se o "
+            "time existe — NUNCA recuse nem escreva narrativa por achar que um time não está na "
+            "liga; a base de dados é a fonte da verdade. "
+            "Suporta partidas FICTÍCIAS entre competições (ex.: Flamengo x PSG num Mundial): "
+            "nesse caso passe home_league/away_league e/ou competition (mas funciona mesmo sem)."
         ),
         "input_schema": {
             "type": "object",
             "properties": {
-                "home_team": {"type": "string", "description": "Nome do time mandante"},
-                "away_team": {"type": "string", "description": "Nome do time visitante"},
-                "league":    {"type": "string", "description": "Liga: 'brasileirao_a', 'premier_league' ou 'la_liga'"},
+                "home_team":   {"type": "string", "description": "Nome do time mandante"},
+                "away_team":   {"type": "string", "description": "Nome do time visitante"},
+                "league":      {"type": "string", "description": "Liga dos dois times, se for a mesma (opcional). Ligas: brasileirao_a, brasileirao_b, copa_brasil, libertadores, premier_league, la_liga, serie_a, bundesliga, ligue_1, champions_league"},
+                "home_league": {"type": "string", "description": "Liga do mandante (use em partida fictícia entre ligas diferentes)"},
+                "away_league": {"type": "string", "description": "Liga do visitante (use em partida fictícia entre ligas diferentes)"},
+                "competition": {"type": "string", "description": "Rótulo da competição fictícia, ex.: 'Mundial de Clubes', 'Libertadores' (opcional, só exibição)"},
             },
-            "required": ["home_team", "away_team", "league"],
+            "required": ["home_team", "away_team"],
         },
     },
 ]
