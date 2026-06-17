@@ -262,7 +262,7 @@ def get_world_cup_predictions(max_matches: int = 12) -> dict:
     fixtures = wc.wc_fixtures(cli, max_matches)
     out, sem_forma = [], []
     for fx in fixtures:
-        pred = pred_module.predict(fx["home"], fx["away"], wc.FORM_LEAGUE)
+        pred = pred_module.predict_teams(fx["home"], fx["away"], wc.FORM_LEAGUE)
         if "error" in pred:
             sem_forma.append(f"{fx['home']} x {fx['away']}")
             continue

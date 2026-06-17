@@ -87,7 +87,7 @@ conda create -n oscabet python=3.11 numpy pandas scikit-learn \
 
 conda activate oscabet
 
-pip install torch flask flask-cors python-dotenv ollama \
+pip install torch catboost flask flask-cors python-dotenv ollama \
   apscheduler nbformat
 ```
 
@@ -205,6 +205,29 @@ H2H, posição na tabela e médias da liga.
 
 ---
 
+## Backends: Rede Neural × CatBoost
+
+O `predictor.py` suporta **dois backends** intercambiáveis (env `OSCABET_BACKEND`):
+
+- **`catboost`** (padrão) — `CatBoostClassifier` por mercado (gradient boosting em
+  árvores). Usa as 103 features numéricas **+ categóricas nativas** (liga, mandante,
+  visitante), o que captura tendências específicas de liga/time sem one-hot.
+- **`nn`** — ensemble de 5 redes neurais multi-tarefa (arquitetura acima).
+
+Comparação **justa** no mesmo conjunto de validação temporal (6.965 jogos, sem
+vazamento — `agent/compare_models.py`, ver `evaluation/model_comparison.md`):
+
+| Mercado | Rede Neural | **CatBoost** |
+|---|---|---|
+| Resultado (H/D/A) | 0,5219 | **0,5235** |
+| Cartões (O/U 4,5) | 0,6247 | **0,6296** |
+| Escanteios (O/U 9,5) | 0,5661 | **0,5815** |
+
+O CatBoost venceu em acurácia nos três mercados (maior ganho em escanteios, +1,5 pp,
+graças às features categóricas) → adotado como **padrão**. Treino: `python agent/train_catboost.py`.
+
+---
+
 ## Tools do Agente
 
 | Tool | Descrição |
@@ -213,8 +236,9 @@ H2H, posição na tabela e médias da liga.
 | `get_h2h` | Histórico de confrontos diretos entre dois times |
 | `get_league_table` | Tabela classificatória completa de uma liga |
 | `get_team_schedule` | Últimos jogos ou próximos jogos de um time |
-| `run_prediction_engine` | Previsão da rede neural (suporta partidas fictícias entre ligas) |
+| `run_prediction_engine` | Previsão do modelo (CatBoost/NN; suporta partidas fictícias entre ligas) |
 | `get_value_bets` | Apostas de **valor** em jogos futuros: modelo × odds reais (EV ≥ piso) |
+| `get_world_cup_predictions` | Previsões da **Copa do Mundo 2026** (forma das seleções via amistosos) |
 
 ---
 
@@ -277,6 +301,28 @@ resultado vem vazio.
 
 > ⚠️ Mede valor contra as odds disponíveis; não é garantia de lucro. Casas reais
 > precificam força/forma (= nossas features), então a margem real é menor.
+
+---
+
+## Copa do Mundo 2026
+
+`agent/world_cup.py` busca os jogos da Copa (Sofascore) e prevê cada um usando a
+forma das seleções obtida dos **amistosos** (coletados como liga `amistosos`).
+Usa `predictor.predict_teams` (sede neutra: extrai a forma de cada time de
+qualquer lado que ele tenha jogado).
+
+```bash
+# 1) coletar amistosos + re-preprocessar (sem retreinar o modelo de clubes)
+python update_weekly.py --no-retrain --seasons 2
+# 2) prever a Copa
+python agent/world_cup.py --max 16
+```
+
+No chat: *"previsões da Copa do Mundo"* → o agente chama `get_world_cup_predictions`.
+
+> ⚠️ **Extrapolação:** o modelo foi treinado em CLUBES. Previsões de seleções são
+> experimentais (out-of-distribution) — as features são genéricas, mas o modelo
+> nunca viu seleções. Seleções sem amistosos na base ficam sem previsão.
 
 ---
 

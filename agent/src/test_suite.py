@@ -110,8 +110,20 @@ def test_predict_cross_league_ficticio():
     assert p["home_league"] != p["away_league"]
 
 
-def test_ensemble_loaded():
-    assert len(predictor.get_predictor()._models) >= 1
+def test_model_loaded():
+    p = predictor.get_predictor()
+    # NN usa _models (ensemble); CatBoost usa _cb (1 modelo por alvo).
+    assert len(p._models) >= 1 or len(p._cb) >= 1
+
+
+def test_predict_teams_neutral():
+    # sede neutra: extrai a forma de qualquer lado (Copa). Brazil tem amistosos.
+    p = predictor.predict_teams("Brazil", "Morocco", "amistosos")
+    if "error" in p:
+        return  # base sem amistosos coletados ainda — não falha o teste
+    pr = p["resultado"]["probs"]
+    assert set(pr) == {"H", "D", "A"}
+    assert abs(sum(pr.values()) - 1.0) < 0.02
 
 
 # ──────────────────────────────── tools ──────────────────────────────────────

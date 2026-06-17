@@ -1,6 +1,11 @@
 # Ambiente
 .env
 
+# Node (gerador do artigo)
+node_modules/
+artigo/_lo*/
+artigo/render/
+
 # Python
 __pycache__/
 *.py[cod]

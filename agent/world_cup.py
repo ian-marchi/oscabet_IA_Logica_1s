@@ -50,7 +50,7 @@ def wc_fixtures(cli, max_matches=30):
 
 def predict_wc(home, away, floor=None):
     """Previsão de um confronto da Copa (forma dos amistosos) + apostas de valor."""
-    pred = pred_module.predict(home, away, FORM_LEAGUE)
+    pred = pred_module.predict_teams(home, away, FORM_LEAGUE)
     if "error" in pred:
         return pred
     pred["_bets"] = []
@@ -76,7 +76,7 @@ def main():
     achou = 0
     naofachou = []
     for fx in fixtures:
-        pred = pred_module.predict(fx["home"], fx["away"], FORM_LEAGUE)
+        pred = pred_module.predict_teams(fx["home"], fx["away"], FORM_LEAGUE)
         data = datetime.datetime.utcfromtimestamp(fx["ts"]).strftime("%d/%m %H:%M") if fx["ts"] else ""
         if "error" in pred:
             naofachou = naofachou
